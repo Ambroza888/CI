@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ci/express-lib1": ["libs/express-lib1/src/index.ts"],
+      "@ci/express-lib2": ["libs/express-lib2/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,8 +1,175 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "express-app1": {
+      "root": "apps/express-app1",
+      "sourceRoot": "apps/express-app1/src",
+      "projectType": "application",
+      "prefix": "express-app1",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/express-app1",
+            "main": "apps/express-app1/src/main.ts",
+            "tsConfig": "apps/express-app1/tsconfig.app.json",
+            "assets": ["apps/express-app1/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/express-app1/src/environments/environment.ts",
+                  "with": "apps/express-app1/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "express-app1:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/express-app1/tsconfig.app.json",
+              "apps/express-app1/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/express-app1/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/express-app1/jest.config.js",
+            "tsConfig": "apps/express-app1/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "express-app2": {
+      "root": "apps/express-app2",
+      "sourceRoot": "apps/express-app2/src",
+      "projectType": "application",
+      "prefix": "express-app2",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/express-app2",
+            "main": "apps/express-app2/src/main.ts",
+            "tsConfig": "apps/express-app2/tsconfig.app.json",
+            "assets": ["apps/express-app2/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/express-app2/src/environments/environment.ts",
+                  "with": "apps/express-app2/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "express-app2:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/express-app2/tsconfig.app.json",
+              "apps/express-app2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/express-app2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/express-app2/jest.config.js",
+            "tsConfig": "apps/express-app2/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "express-lib1": {
+      "root": "libs/express-lib1",
+      "sourceRoot": "libs/express-lib1/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/express-lib1/tsconfig.lib.json",
+              "libs/express-lib1/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/express-lib1/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/express-lib1/jest.config.js",
+            "tsConfig": "libs/express-lib1/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "express-lib2": {
+      "root": "libs/express-lib2",
+      "sourceRoot": "libs/express-lib2/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/express-lib2/tsconfig.lib.json",
+              "libs/express-lib2/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/express-lib2/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/express-lib2/jest.config.js",
+            "tsConfig": "libs/express-lib2/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/express"
   },
   "schematics": {
     "@nrwl/workspace": {
@@ -62,5 +229,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "express-app1"
 }

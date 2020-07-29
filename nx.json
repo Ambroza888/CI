@@ -21,5 +21,18 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "express-app1": {
+      "tags": []
+    },
+    "express-app2": {
+      "tags": []
+    },
+    "express-lib1": {
+      "tags": []
+    },
+    "express-lib2": {
+      "tags": []
+    }
+  }
 }
