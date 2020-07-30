@@ -33,6 +33,9 @@
     },
     "express-lib2": {
       "tags": []
+    },
+    "express-app3": {
+      "tags": []
     }
   }
 }
