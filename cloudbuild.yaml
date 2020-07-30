@@ -4,4 +4,4 @@ steps:
   args: ['install']
 - name: node
   entrypoint: nx
-  args: ['run', 'test:express-app1']
+  args: ['run', 'test']
