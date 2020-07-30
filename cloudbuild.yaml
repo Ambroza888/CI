@@ -3,5 +3,5 @@ steps:
   entrypoint: npm
   args: ['install']
 - name: node
-  entrypoint: nx
-  args: ['run express-app1:test']
+  entrypoint: npm
+  args: ['run', 'test:unit']
