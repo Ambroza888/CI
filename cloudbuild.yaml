@@ -4,9 +4,6 @@ steps:
   args: ['install']
 - name: node
   entrypoint: npm
-  args: ['run','affected:apps -- --plain --base develop']
-- name: node
-  entrypoint: npm
   args: ['run','affected:apps']
 - name: node
   entrypoint: npm
