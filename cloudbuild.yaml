@@ -4,7 +4,8 @@ steps:
   args: ['install']
 - name: node
   entrypoint: npm
-  args: ['test']
-- name: node
-  entrypoint: npm
   args: ['run', 'build']
+
+  #Create Main.js
+  #Create Package.json
+  #Create App.yaml
