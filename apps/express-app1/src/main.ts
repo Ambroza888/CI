@@ -6,7 +6,7 @@
 import * as express from 'express';
 
 const app = express();
-// helloooo there
+// helloooo there!
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to express-app1!' });
 });
