@@ -1,4 +1,4 @@
 # [START runtime]
 runtime: nodejs10
-service: comodo3000
+service: yamloutside
 # [END runtime]

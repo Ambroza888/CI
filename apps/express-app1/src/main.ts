@@ -5,8 +5,9 @@ const app = express();
 
 app.use(express.json());
 
-
-
+app.get('/', (req, res) => {
+  res.send({ message: 'VESO + RADO = VNL' });
+});
 
 app.set('port', process.env.PORT || environment.PORT || 3000);
 const server = app.listen(app.get('port'), function () {
