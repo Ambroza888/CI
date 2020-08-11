@@ -4,10 +4,10 @@ steps:
   args: ['install']
 - name: node
   entrypoint: npm
-  args: ['run','build']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
-  timeout: '1600s'
+  args: ['run','affected', 'build']
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy']
+#   timeout: '1600s'
   #Create Main.js
   #Create Package.json
   #Create App.yaml
