@@ -11,7 +11,7 @@
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
-    "affected:build": "nx build:build -- $(git merge-base origin/master HEAD) HEAD --prod",
+    "affected:build": "nx build:build --base=master~1 --head=master",
     "affected:e2e": "nx affected:e2e",
     "affected:test": "nx affected:test",
     "affected:lint": "nx affected:lint",
