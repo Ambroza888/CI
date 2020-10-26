@@ -1,0 +1,17 @@
+steps:
+- name: node
+  entrypoint: npm
+  args: ['install']
+- name: node
+  entrypoint: npm
+  args: ['run','affected:build']
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy']
+#   timeout: '1600s'
+  #Create Main.js
+  #Create Package.json
+  #Create App.yaml
+
+  # 1.specific dist
+  # 2.in dist - touch json + App.yaml
+  # 3. this specific dist gcloud app deploy
